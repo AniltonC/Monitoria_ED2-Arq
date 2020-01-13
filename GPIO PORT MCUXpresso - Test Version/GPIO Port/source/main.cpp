@@ -1,70 +1,100 @@
-/*
- * Copyright 2016-2020 NXP
- * All rights reserved.
+/*!
+ * @copyright   � 2017 UFAM - Universidade Federal do Amazonas.
  *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ * @brief       Exemplo de uso do GPIO da MKL25Z.
  *
- * o Redistributions of source code must retain the above copyright notice, this list
- *   of conditions and the following disclaimer.
+ * @example     main.cpp
+ * @version     1.0
+ * @date        26 Julho 2017
  *
- * o Redistributions in binary form must reproduce the above copyright notice, this
- *   list of conditions and the following disclaimer in the documentation and/or
- *   other materials provided with the distribution.
+ * @section     HARDWARES & SOFTWARES
+ *              +board        FRDM-KL25Z da NXP.
+ *              +processor    MKL25Z128VLK4 - ARM Cortex-M0+
+ *              +compiler     Kinetis� Design Studio IDE
+ *              +manual       L25P80M48SF0RM, Rev.3, September 2012
+ *              +revisions    Vers�o (data): Descri��o breve.
+ *                             ++ 1.0 (6 Julho 2017): Vers�o inicial.
  *
- * o Neither the name of NXP Semiconductor, Inc. nor the names of its
- *   contributors may be used to endorse or promote products derived from this
- *   software without specific prior written permission.
+ * @section     AUTHORS & DEVELOPERS
+ *              +institution  Universidade Federal do Amazonas
+ *              +courses      Engenharia da Computa��o / Engenharia El�trica
+ *              +teacher      Miguel Grimm <miguelgrimm@gmail.com>
+ *              +student      Vers�o inicial:
+ *                             ++ Hamilton Nascimento <hdan_neto@hotmail.com>
  *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
- * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * @section     LICENSE
+ *
+ *              GNU General Public License (GNU GPL)
+ *
+ *              Este programa � um software livre; Voc� pode redistribu�-lo
+ *              e/ou modific�-lo de acordo com os termos do "GNU General Public
+ *              License" como publicado pela Free Software Foundation; Seja a
+ *              vers�o 3 da licen�a, ou qualquer vers�o posterior.
+ *
+ *              Este programa � distribu�do na esperan�a de que seja �til,
+ *              mas SEM QUALQUER GARANTIA; Sem a garantia impl�cita de
+ *              COMERCIALIZA��O OU USO PARA UM DETERMINADO PROP�SITO.
+ *              Veja o site da "GNU General Public License" para mais detalhes.
+ *
+ * @htmlonly    http://www.gnu.org/copyleft/gpl.html
  */
- 
-/**
- * @file    GPIO Port.cpp
- * @brief   Application entry point.
+
+#include "mkl_GPIOPort.h"
+
+mkl_GPIOPort blueLed(gpio_PTD1);
+mkl_GPIOPort redLed(gpio_PTB18);
+
+/*!
+ *   @fn         setup
+ *
+ *   @brief      Realiza a configura��o do perif�rico para a entrada e sa�da.
+ *
+ *   Este procedimento realiza a configura��o do pino PTA1 do GPIO para o modo
+ *   entrada e a configura��o do pino PTD1 para o modo sa�da (RGB)
+ *
+ *   @details    O led RGB � do tipo anodo comum.
  */
-#include <stdio.h>
-#include "board.h"
-#include "peripherals.h"
-#include "pin_mux.h"
-#include "clock_config.h"
-#include "MKL25Z4.h"
-#include "fsl_debug_console.h"
-/* TODO: insert other include files here. */
+void setup() {
+  /*!
+   * Configura o pino para o modo sa�da.
+   */
+  blueLed.setPortMode(gpio_output);
+  redLed.setPortMode(gpio_output);
+  /*!
+   * Configura o pino para o modo entrada com resistor de pull up.
+   */
 
-/* TODO: insert other definitions and declarations here. */
+}
 
-/*
- * @brief   Application entry point.
+/*!
+ *   @fn     main
+ *
+ *   @brief    Acende um led conforme a situa��o de uma chave.
+ *
+ *   Este programa realiza o teste da classe do perif�rico GPIO, onde
+ *   duas portas s�o configuradas, uma como entrada e a outra como
+ *   sa�da. O valor lido na entrada � escrito na sa�da.
+ *
+ *   @details  A porta configurada como entrada possui um resistor de pull-up
+ *             interno, sendo necess�rio a liga��o da chave ao terra.
+ *
+ *   @return  sempre retorna o valor 0.
  */
-int main(void) {
+int main() {
+  bool bit = 0;
+  uint32_t contador = 0;
 
-  	/* Init board hardware. */
-    BOARD_InitBootPins();
-    BOARD_InitBootClocks();
-    BOARD_InitBootPeripherals();
-  	/* Init FSL debug console. */
-    BOARD_InitDebugConsole();
+  setup();
 
-    PRINTF("Hello World\n");
-
-    /* Force the counter to be placed into memory. */
-    volatile static int i = 0 ;
-    /* Enter an infinite loop, just incrementing a counter. */
-    while(1) {
-        i++ ;
-        /* 'Dummy' NOP to allow source level single stepping of
-            tight while() loop */
-        __asm volatile ("nop");
+  while (true) {
+    contador++;
+    if(contador >= 200000){
+      bit = !bit;
+      contador = 0;
     }
-    return 0 ;
+    redLed.writeBit(bit);
+    blueLed.writeBit(!bit);
+  }
+
+  return 0;
 }

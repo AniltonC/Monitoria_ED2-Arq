@@ -1,0 +1,9 @@
+mkl_GPIO.cpp:61:6:void mkl_GPIO::setPortMode(gpio_PortMode)	16	static
+mkl_GPIO.cpp:85:6:void mkl_GPIO::setPullResistor(gpio_PullResistor)	16	static
+mkl_GPIO.cpp:103:6:void mkl_GPIO::writeBit(int)	16	static
+mkl_GPIO.cpp:123:5:int mkl_GPIO::readBit()	16	static
+mkl_GPIO.cpp:141:6:void mkl_GPIO::toogleBit()	16	static
+mkl_GPIO.cpp:159:6:void mkl_GPIO::bindPeripheral(uint8_t, uint8_t)	24	static
+mkl_GPIO.cpp:220:6:void mkl_GPIO::enableModuleClock(uint8_t)	16	static
+mkl_GPIO.cpp:236:6:void mkl_GPIO::selectMuxAlternative()	16	static
+mkl_GPIO.cpp:250:6:void mkl_GPIO::setGPIOParameters(gpio_Pin, uint32_t&, uint32_t&)	24	static

@@ -1,1 +1,4 @@
-main.cpp:49:5:int main()	8	static
+main.cpp:16:6:void setup()	8	static
+main.cpp:42:5:int main()	16	static
+main.cpp:59:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:59:1:cpp)	8	static
