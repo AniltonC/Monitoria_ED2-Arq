@@ -1,6 +1,6 @@
-17:57:37 **** Incremental Build of configuration Debug for project GPIO Port ****
+16:46:33 **** Incremental Build of configuration Debug for project GPIO Port ****
 make -r -j4 all 
 make: Nothing to be done for 'all'.
 
-17:57:37 Build Finished. 0 errors, 0 warnings. (took 165ms)
+16:46:34 Build Finished. 0 errors, 0 warnings. (took 320ms)
 

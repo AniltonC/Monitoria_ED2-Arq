@@ -355,10 +355,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./source/mkl_GPIO.o
  .data          0x00000000        0x0 ./source/mkl_GPIO.o
  .bss           0x00000000        0x0 ./source/mkl_GPIO.o
- .text._ZN8mkl_GPIO15setPullResistorE17gpio_PullResistor
-                0x00000000       0x38 ./source/mkl_GPIO.o
- .text._ZN8mkl_GPIO7readBitEv
-                0x00000000       0x2c ./source/mkl_GPIO.o
  .text._ZN8mkl_GPIO9toogleBitEv
                 0x00000000       0x22 ./source/mkl_GPIO.o
  .debug_macro   0x00000000      0xb7a ./source/mkl_GPIO.o
@@ -2420,7 +2416,7 @@ END GROUP
                 0x20003000                __top_SRAM = 0x20003000
                 0x20003000                __top_RAM = 0x20003000
 
-.text           0x00000000      0x848
+.text           0x00000000      0x98c
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -2430,13 +2426,13 @@ END GROUP
                 0x000000c0                . = ALIGN (0x4)
                 0x000000c0                __section_table_start = .
                 0x000000c0                __data_section_table = .
-                0x000000c0        0x4 LONG 0x848 LOADADDR (.data)
+                0x000000c0        0x4 LONG 0x98c LOADADDR (.data)
                 0x000000c4        0x4 LONG 0x1ffff080 ADDR (.data)
                 0x000000c8        0x4 LONG 0x0 SIZEOF (.data)
                 0x000000cc                __data_section_table_end = .
                 0x000000cc                __bss_section_table = .
                 0x000000cc        0x4 LONG 0x1ffff080 ADDR (.bss)
-                0x000000d0        0x4 LONG 0x64 SIZEOF (.bss)
+                0x000000d0        0x4 LONG 0x94 SIZEOF (.bss)
                 0x000000d4                __bss_section_table_end = .
                 0x000000d4                __section_table_end = .
  *(SORT_BY_ALIGNMENT(.after_vectors*))
@@ -2526,118 +2522,124 @@ END GROUP
                 0x00000001                ASSERT (! ((__FLASH_CONFIG_START__ == __FLASH_CONFIG_END__)), Linker Flash Config Support Enabled, but no .FlashConfig section provided within application)
  *(SORT_BY_ALIGNMENT(.text*))
  .text._Z5setupv
-                0x00000410       0x28 ./source/main.o
+                0x00000410       0x4c ./source/main.o
                 0x00000410                setup()
- .text.main     0x00000438       0x64 ./source/main.o
-                0x00000438                main
+ .text.main     0x0000045c      0x100 ./source/main.o
+                0x0000045c                main
  .text._Z41__static_initialization_and_destruction_0ii
-                0x0000049c       0x4c ./source/main.o
+                0x0000055c       0x6c ./source/main.o
  .text._GLOBAL__sub_I_blueLed
-                0x000004e8       0x18 ./source/main.o
+                0x000005c8       0x18 ./source/main.o
  .text._ZN8mkl_GPIO14bindPeripheralEhh
-                0x00000500       0x74 ./source/mkl_GPIO.o
-                0x00000500                mkl_GPIO::bindPeripheral(unsigned char, unsigned char)
+                0x000005e0       0x74 ./source/mkl_GPIO.o
+                0x000005e0                mkl_GPIO::bindPeripheral(unsigned char, unsigned char)
  .text._ZN8mkl_GPIO17enableModuleClockEh
-                0x00000574       0x38 ./source/mkl_GPIO.o
-                0x00000574                mkl_GPIO::enableModuleClock(unsigned char)
+                0x00000654       0x38 ./source/mkl_GPIO.o
+                0x00000654                mkl_GPIO::enableModuleClock(unsigned char)
  .text.HardFault_Handler
-                0x000005ac       0x30 ./source/semihost_hardfault.o
-                0x000005ac                HardFault_Handler
+                0x0000068c       0x30 ./source/semihost_hardfault.o
+                0x0000068c                HardFault_Handler
  .text.UART0_DriverIRQHandler
-                0x000005dc       0x24 ./drivers/fsl_lpsci.o
-                0x000005dc                UART0_DriverIRQHandler
+                0x000006bc       0x24 ./drivers/fsl_lpsci.o
+                0x000006bc                UART0_DriverIRQHandler
  .text.UART1_DriverIRQHandler
-                0x00000600       0x24 ./drivers/fsl_uart.o
-                0x00000600                UART1_DriverIRQHandler
+                0x000006e0       0x24 ./drivers/fsl_uart.o
+                0x000006e0                UART1_DriverIRQHandler
  .text.UART2_DriverIRQHandler
-                0x00000624       0x24 ./drivers/fsl_uart.o
-                0x00000624                UART2_DriverIRQHandler
+                0x00000704       0x24 ./drivers/fsl_uart.o
+                0x00000704                UART2_DriverIRQHandler
  .text.SystemInit
-                0x00000648       0x18 ./CMSIS/system_MKL25Z4.o
-                0x00000648                SystemInit
+                0x00000728       0x18 ./CMSIS/system_MKL25Z4.o
+                0x00000728                SystemInit
  .text.__libc_init_array
-                0x00000660       0x48 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(lib_a-init.o)
-                0x00000660                __libc_init_array
- .text          0x000006a8       0x48 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
+                0x00000740       0x48 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(lib_a-init.o)
+                0x00000740                __libc_init_array
+ .text          0x00000788       0x48 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
  .text._ZN8mkl_GPIO11setPortModeE13gpio_PortMode
-                0x000006f0       0x46 ./source/mkl_GPIO.o
-                0x000006f0                mkl_GPIO::setPortMode(gpio_PortMode)
+                0x000007d0       0x46 ./source/mkl_GPIO.o
+                0x000007d0                mkl_GPIO::setPortMode(gpio_PortMode)
+ .text._ZN8mkl_GPIO15setPullResistorE17gpio_PullResistor
+                0x00000816       0x38 ./source/mkl_GPIO.o
+                0x00000816                mkl_GPIO::setPullResistor(gpio_PullResistor)
  .text._ZN8mkl_GPIO8writeBitEi
-                0x00000736       0x40 ./source/mkl_GPIO.o
-                0x00000736                mkl_GPIO::writeBit(int)
+                0x0000084e       0x40 ./source/mkl_GPIO.o
+                0x0000084e                mkl_GPIO::writeBit(int)
+ .text._ZN8mkl_GPIO7readBitEv
+                0x0000088e       0x2c ./source/mkl_GPIO.o
+                0x0000088e                mkl_GPIO::readBit()
  .text._ZN8mkl_GPIO20selectMuxAlternativeEv
-                0x00000776       0x1a ./source/mkl_GPIO.o
-                0x00000776                mkl_GPIO::selectMuxAlternative()
+                0x000008ba       0x1a ./source/mkl_GPIO.o
+                0x000008ba                mkl_GPIO::selectMuxAlternative()
  .text._ZN8mkl_GPIO17setGPIOParametersE8gpio_PinRmS1_
-                0x00000790       0x46 ./source/mkl_GPIO.o
-                0x00000790                mkl_GPIO::setGPIOParameters(gpio_Pin, unsigned long&, unsigned long&)
+                0x000008d4       0x46 ./source/mkl_GPIO.o
+                0x000008d4                mkl_GPIO::setGPIOParameters(gpio_Pin, unsigned long&, unsigned long&)
  .text._ZN12mkl_GPIOPortC2E8gpio_Pin
-                0x000007d6       0x52 ./source/mkl_GPIOPort.o
-                0x000007d6                mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)
-                0x000007d6                mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)
+                0x0000091a       0x52 ./source/mkl_GPIOPort.o
+                0x0000091a                mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)
+                0x0000091a                mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.constdata) SORT_BY_ALIGNMENT(.constdata.*))
-                0x00000828                . = ALIGN (0x4)
-                0x00000828                . = ALIGN (0x4)
+                0x0000096c                . = ALIGN (0x4)
+                0x0000096c                . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(.init))
- .init          0x00000828        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crti.o
-                0x00000828                _init
- .init          0x0000082c        0x8 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtn.o
-                0x00000834                . = ALIGN (0x4)
-                0x00000834                __preinit_array_start = .
+ .init          0x0000096c        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crti.o
+                0x0000096c                _init
+ .init          0x00000970        0x8 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtn.o
+                0x00000978                . = ALIGN (0x4)
+                0x00000978                __preinit_array_start = .
  *(SORT_BY_ALIGNMENT(.preinit_array))
-                0x00000834                __preinit_array_end = .
-                0x00000834                . = ALIGN (0x4)
-                0x00000834                __init_array_start = .
+                0x00000978                __preinit_array_end = .
+                0x00000978                . = ALIGN (0x4)
+                0x00000978                __init_array_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.init_array.*)))
  *(SORT_BY_ALIGNMENT(.init_array))
- .init_array    0x00000834        0x4 ./source/main.o
- .init_array    0x00000838        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
-                0x0000083c                __init_array_end = .
+ .init_array    0x00000978        0x4 ./source/main.o
+ .init_array    0x0000097c        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
+                0x00000980                __init_array_end = .
  *(SORT_BY_ALIGNMENT(.fini))
- .fini          0x0000083c        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crti.o
-                0x0000083c                _fini
- .fini          0x00000840        0x8 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtn.o
-                0x00000848                . = ALIGN (0x4)
+ .fini          0x00000980        0x4 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crti.o
+                0x00000980                _fini
+ .fini          0x00000984        0x8 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtn.o
+                0x0000098c                . = ALIGN (0x4)
  *crtbegin.o(SORT_BY_ALIGNMENT(.ctors))
  *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend.o) .ctors))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.ctors.*)))
  *crtend.o(SORT_BY_ALIGNMENT(.ctors))
-                0x00000848                . = ALIGN (0x4)
+                0x0000098c                . = ALIGN (0x4)
  *crtbegin.o(SORT_BY_ALIGNMENT(.dtors))
  *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend.o) .dtors))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.dtors.*)))
  *crtend.o(SORT_BY_ALIGNMENT(.dtors))
-                0x00000848                . = ALIGN (0x4)
+                0x0000098c                . = ALIGN (0x4)
 
-.glue_7         0x00000848        0x0
- .glue_7        0x00000848        0x0 linker stubs
+.glue_7         0x0000098c        0x0
+ .glue_7        0x0000098c        0x0 linker stubs
 
-.glue_7t        0x00000848        0x0
- .glue_7t       0x00000848        0x0 linker stubs
+.glue_7t        0x0000098c        0x0
+ .glue_7t       0x0000098c        0x0 linker stubs
 
-.vfp11_veneer   0x00000848        0x0
- .vfp11_veneer  0x00000848        0x0 linker stubs
+.vfp11_veneer   0x0000098c        0x0
+ .vfp11_veneer  0x0000098c        0x0 linker stubs
 
-.v4_bx          0x00000848        0x0
- .v4_bx         0x00000848        0x0 linker stubs
+.v4_bx          0x0000098c        0x0
+ .v4_bx         0x0000098c        0x0 linker stubs
 
-.iplt           0x00000848        0x0
- .iplt          0x00000848        0x0 ./startup/startup_mkl25z4.o
+.iplt           0x0000098c        0x0
+ .iplt          0x0000098c        0x0 ./startup/startup_mkl25z4.o
 
-.rel.dyn        0x00000848        0x0
- .rel.iplt      0x00000848        0x0 ./startup/startup_mkl25z4.o
+.rel.dyn        0x0000098c        0x0
+ .rel.iplt      0x0000098c        0x0 ./startup/startup_mkl25z4.o
 
-.eh_frame       0x00000848        0x0
- .eh_frame      0x00000848        0x0 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
+.eh_frame       0x0000098c        0x0
+ .eh_frame      0x0000098c        0x0 c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
-                0x00000848                __exidx_start = .
+                0x0000098c                __exidx_start = .
 
 .ARM.exidx
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
-                0x00000848                __exidx_end = .
-                0x00000848                _etext = .
+                0x0000098c                __exidx_end = .
+                0x0000098c                _etext = .
 
 .m_usb_data
  *(SORT_BY_ALIGNMENT(m_usb_bdt))
@@ -2655,7 +2657,7 @@ END GROUP
                 0x1ffff080                . = ALIGN (0x4)
                 0x1ffff080                _end_uninit_RESERVED = .
 
-.data           0x1ffff080        0x0 load address 0x00000848
+.data           0x1ffff080        0x0 load address 0x0000098c
  FILL mask 0xff
                 0x1ffff080                _data = .
                 [!provide]                PROVIDE (__start_data_RAM = .)
@@ -2671,10 +2673,10 @@ END GROUP
                 [!provide]                PROVIDE (__end_data_RAM = .)
                 [!provide]                PROVIDE (__end_data_SRAM = .)
 
-.igot.plt       0x1ffff080        0x0 load address 0x00000848
+.igot.plt       0x1ffff080        0x0 load address 0x0000098c
  .igot.plt      0x1ffff080        0x0 ./startup/startup_mkl25z4.o
 
-.bss            0x1ffff080       0x64
+.bss            0x1ffff080       0x94
                 0x1ffff080                _bss = .
                 [!provide]                PROVIDE (__start_bss_RAM = .)
                 [!provide]                PROVIDE (__start_bss_SRAM = .)
@@ -2683,76 +2685,81 @@ END GROUP
                 0x1ffff080                blueLed
  .bss.redLed    0x1ffff098       0x18 ./source/main.o
                 0x1ffff098                redLed
+ .bss.greenLed  0x1ffff0b0       0x18 ./source/main.o
+                0x1ffff0b0                greenLed
+ .bss.pushButton
+                0x1ffff0c8       0x18 ./source/main.o
+                0x1ffff0c8                pushButton
  .bss.s_lpsciHandle
-                0x1ffff0b0        0x4 ./drivers/fsl_lpsci.o
+                0x1ffff0e0        0x4 ./drivers/fsl_lpsci.o
  .bss.s_lpsciIsr
-                0x1ffff0b4        0x4 ./drivers/fsl_lpsci.o
+                0x1ffff0e4        0x4 ./drivers/fsl_lpsci.o
  .bss.s_uartHandle
-                0x1ffff0b8        0xc ./drivers/fsl_uart.o
+                0x1ffff0e8        0xc ./drivers/fsl_uart.o
  .bss.s_uartIsr
-                0x1ffff0c4        0x4 ./drivers/fsl_uart.o
- .bss           0x1ffff0c8       0x1c c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
+                0x1ffff0f4        0x4 ./drivers/fsl_uart.o
+ .bss           0x1ffff0f8       0x1c c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v6-m/nofp\crtbegin.o
  *(SORT_BY_ALIGNMENT(COMMON))
-                0x1ffff0e4                . = ALIGN (0x4)
-                0x1ffff0e4                _ebss = .
+                0x1ffff114                . = ALIGN (0x4)
+                0x1ffff114                _ebss = .
                 [!provide]                PROVIDE (__end_bss_RAM = .)
                 [!provide]                PROVIDE (__end_bss_SRAM = .)
                 [!provide]                PROVIDE (end = .)
 
-.noinit         0x1ffff0e4        0x0
-                0x1ffff0e4                _noinit = .
+.noinit         0x1ffff114        0x0
+                0x1ffff114                _noinit = .
                 [!provide]                PROVIDE (__start_noinit_RAM = .)
                 [!provide]                PROVIDE (__start_noinit_SRAM = .)
  *(SORT_BY_ALIGNMENT(.noinit*))
-                0x1ffff0e4                . = ALIGN (0x4)
-                0x1ffff0e4                _end_noinit = .
+                0x1ffff114                . = ALIGN (0x4)
+                0x1ffff114                _end_noinit = .
                 [!provide]                PROVIDE (__end_noinit_RAM = .)
                 [!provide]                PROVIDE (__end_noinit_SRAM = .)
                 0x00000400                _HeapSize = 0x400
 
-.heap           0x1ffff0e4      0x400
-                0x1ffff0e4                _pvHeapStart = .
-                0x1ffff4e4                . = (. + _HeapSize)
- *fill*         0x1ffff0e4      0x400 
-                0x1ffff4e4                . = ALIGN (0x4)
-                0x1ffff4e4                _pvHeapLimit = .
+.heap           0x1ffff114      0x400
+                0x1ffff114                _pvHeapStart = .
+                0x1ffff514                . = (. + _HeapSize)
+ *fill*         0x1ffff114      0x400 
+                0x1ffff514                . = ALIGN (0x4)
+                0x1ffff514                _pvHeapLimit = .
                 0x00000400                _StackSize = 0x400
 
 .heap2stackfill
-                0x1ffff4e4      0x400
-                0x1ffff8e4                . = (. + _StackSize)
- *fill*         0x1ffff4e4      0x400 
+                0x1ffff514      0x400
+                0x1ffff914                . = (. + _StackSize)
+ *fill*         0x1ffff514      0x400 
 
 .stack          0x20002c00        0x0
                 0x20002c00                _vStackBase = .
                 0x20002c00                . = ALIGN (0x4)
                 0x20003000                _vStackTop = (. + _StackSize)
                 0x00000000                _image_start = LOADADDR (.text)
-                0x00000848                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x00000848                _image_size = (_image_end - _image_start)
+                0x0000098c                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0000098c                _image_size = (_image_end - _image_start)
 OUTPUT(GPIO Port.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x59a5
+.debug_info     0x00000000     0x59c2
  .debug_info    0x00000000      0x4e2 ./startup/startup_mkl25z4.o
- .debug_info    0x000004e2      0x545 ./source/main.o
- .debug_info    0x00000a27      0x804 ./source/mkl_GPIO.o
- .debug_info    0x0000122b      0x4e9 ./source/mkl_GPIOPort.o
- .debug_info    0x00001714       0x53 ./source/mtb.o
- .debug_info    0x00001767       0x3c ./source/semihost_hardfault.o
- .debug_info    0x000017a3     0x1f30 ./drivers/fsl_lpsci.o
- .debug_info    0x000036d3     0x1ead ./drivers/fsl_uart.o
- .debug_info    0x00005580      0x425 ./CMSIS/system_MKL25Z4.o
+ .debug_info    0x000004e2      0x562 ./source/main.o
+ .debug_info    0x00000a44      0x804 ./source/mkl_GPIO.o
+ .debug_info    0x00001248      0x4e9 ./source/mkl_GPIOPort.o
+ .debug_info    0x00001731       0x53 ./source/mtb.o
+ .debug_info    0x00001784       0x3c ./source/semihost_hardfault.o
+ .debug_info    0x000017c0     0x1f30 ./drivers/fsl_lpsci.o
+ .debug_info    0x000036f0     0x1ead ./drivers/fsl_uart.o
+ .debug_info    0x0000559d      0x425 ./CMSIS/system_MKL25Z4.o
 
-.debug_abbrev   0x00000000     0x1043
+.debug_abbrev   0x00000000     0x1032
  .debug_abbrev  0x00000000      0x183 ./startup/startup_mkl25z4.o
- .debug_abbrev  0x00000183      0x1d6 ./source/main.o
- .debug_abbrev  0x00000359      0x1e4 ./source/mkl_GPIO.o
- .debug_abbrev  0x0000053d      0x1bd ./source/mkl_GPIOPort.o
- .debug_abbrev  0x000006fa       0x46 ./source/mtb.o
- .debug_abbrev  0x00000740       0x31 ./source/semihost_hardfault.o
- .debug_abbrev  0x00000771      0x3c5 ./drivers/fsl_lpsci.o
- .debug_abbrev  0x00000b36      0x3df ./drivers/fsl_uart.o
- .debug_abbrev  0x00000f15      0x12e ./CMSIS/system_MKL25Z4.o
+ .debug_abbrev  0x00000183      0x1c5 ./source/main.o
+ .debug_abbrev  0x00000348      0x1e4 ./source/mkl_GPIO.o
+ .debug_abbrev  0x0000052c      0x1bd ./source/mkl_GPIOPort.o
+ .debug_abbrev  0x000006e9       0x46 ./source/mtb.o
+ .debug_abbrev  0x0000072f       0x31 ./source/semihost_hardfault.o
+ .debug_abbrev  0x00000760      0x3c5 ./drivers/fsl_lpsci.o
+ .debug_abbrev  0x00000b25      0x3df ./drivers/fsl_uart.o
+ .debug_abbrev  0x00000f04      0x12e ./CMSIS/system_MKL25Z4.o
 
 .debug_aranges  0x00000000      0x4c0
  .debug_aranges
@@ -2801,35 +2808,35 @@ OUTPUT(GPIO Port.axf elf32-littlearm)
  .debug_macro   0x00001887      0x1c4 ./drivers/fsl_uart.o
  .debug_macro   0x00001a4b       0xbb ./CMSIS/system_MKL25Z4.o
 
-.debug_line     0x00000000     0x2f40
+.debug_line     0x00000000     0x2f85
  .debug_line    0x00000000      0x1ff ./startup/startup_mkl25z4.o
- .debug_line    0x000001ff      0x2cb ./source/main.o
- .debug_line    0x000004ca      0x3c7 ./source/mkl_GPIO.o
- .debug_line    0x00000891      0x26f ./source/mkl_GPIOPort.o
- .debug_line    0x00000b00       0xd6 ./source/mtb.o
- .debug_line    0x00000bd6       0x5a ./source/semihost_hardfault.o
- .debug_line    0x00000c30      0xf50 ./drivers/fsl_lpsci.o
- .debug_line    0x00001b80      0xf3e ./drivers/fsl_uart.o
- .debug_line    0x00002abe      0x482 ./CMSIS/system_MKL25Z4.o
+ .debug_line    0x000001ff      0x310 ./source/main.o
+ .debug_line    0x0000050f      0x3c7 ./source/mkl_GPIO.o
+ .debug_line    0x000008d6      0x26f ./source/mkl_GPIOPort.o
+ .debug_line    0x00000b45       0xd6 ./source/mtb.o
+ .debug_line    0x00000c1b       0x5a ./source/semihost_hardfault.o
+ .debug_line    0x00000c75      0xf50 ./drivers/fsl_lpsci.o
+ .debug_line    0x00001bc5      0xf3e ./drivers/fsl_uart.o
+ .debug_line    0x00002b03      0x482 ./CMSIS/system_MKL25Z4.o
 
-.debug_str      0x00000000    0x36f6c
+.debug_str      0x00000000    0x36f82
  .debug_str     0x00000000     0x3592 ./startup/startup_mkl25z4.o
                                0x35c7 (size before relaxing)
- .debug_str     0x00003592    0x260e3 ./source/main.o
-                              0x29553 (size before relaxing)
- .debug_str     0x00029675      0x11e ./source/mkl_GPIO.o
+ .debug_str     0x00003592    0x260f9 ./source/main.o
+                              0x29569 (size before relaxing)
+ .debug_str     0x0002968b      0x11e ./source/mkl_GPIO.o
                               0x29557 (size before relaxing)
- .debug_str     0x00029793       0x39 ./source/mkl_GPIOPort.o
+ .debug_str     0x000297a9       0x39 ./source/mkl_GPIOPort.o
                               0x294b4 (size before relaxing)
- .debug_str     0x000297cc      0x718 ./source/mtb.o
+ .debug_str     0x000297e2      0x718 ./source/mtb.o
                                0x32ca (size before relaxing)
- .debug_str     0x00029ee4       0x1f ./source/semihost_hardfault.o
+ .debug_str     0x00029efa       0x1f ./source/semihost_hardfault.o
                                0x2db7 (size before relaxing)
- .debug_str     0x00029f03     0xc6c8 ./drivers/fsl_lpsci.o
+ .debug_str     0x00029f19     0xc6c8 ./drivers/fsl_lpsci.o
                               0x33fdf (size before relaxing)
- .debug_str     0x000365cb      0x93d ./drivers/fsl_uart.o
+ .debug_str     0x000365e1      0x93d ./drivers/fsl_uart.o
                               0x34002 (size before relaxing)
- .debug_str     0x00036f08       0x64 ./CMSIS/system_MKL25Z4.o
+ .debug_str     0x00036f1e       0x64 ./CMSIS/system_MKL25Z4.o
                               0x2f46f (size before relaxing)
 
 .comment        0x00000000       0x76
@@ -3393,6 +3400,7 @@ g_pfnVectors                                      ./startup/startup_mkl25z4.o
 g_xtal0Freq                                       ./drivers/fsl_clock.o
                                                   ./board/clock_config.o
 g_xtal32Freq                                      ./drivers/fsl_clock.o
+greenLed                                          ./source/main.o
 iprintf                                           c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(lib_a-printf.o)
 kFCCOBx                                           ./drivers/fsl_flash.o
 kFPROTL                                           ./drivers/fsl_flash.o
@@ -3425,6 +3433,7 @@ mkl_GPIO::bindPeripheral(unsigned char, unsigned char) ./source/mkl_GPIO.o
 mkl_GPIO::enableModuleClock(unsigned char)        ./source/mkl_GPIO.o
                                                   ./source/mkl_GPIOPort.o
 mkl_GPIO::readBit()                               ./source/mkl_GPIO.o
+                                                  ./source/main.o
 mkl_GPIO::selectMuxAlternative()                  ./source/mkl_GPIO.o
                                                   ./source/mkl_GPIOPort.o
 mkl_GPIO::setGPIOParameters(gpio_Pin, unsigned long&, unsigned long&) ./source/mkl_GPIO.o
@@ -3432,12 +3441,13 @@ mkl_GPIO::setGPIOParameters(gpio_Pin, unsigned long&, unsigned long&) ./source/m
 mkl_GPIO::setPortMode(gpio_PortMode)              ./source/mkl_GPIO.o
                                                   ./source/main.o
 mkl_GPIO::setPullResistor(gpio_PullResistor)      ./source/mkl_GPIO.o
+                                                  ./source/main.o
 mkl_GPIO::toogleBit()                             ./source/mkl_GPIO.o
 mkl_GPIO::writeBit(int)                           ./source/mkl_GPIO.o
                                                   ./source/main.o
 mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)              ./source/mkl_GPIOPort.o
-mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)              ./source/mkl_GPIOPort.o
                                                   ./source/main.o
+mkl_GPIOPort::mkl_GPIOPort(gpio_Pin)              ./source/mkl_GPIOPort.o
 operator delete(void*)                            ./source/cpp_config.o
 operator delete[](void*)                          ./source/cpp_config.o
 operator new(unsigned int)                        ./source/cpp_config.o
@@ -3446,6 +3456,7 @@ oscConfig_BOARD_BootClockRUN                      ./board/clock_config.o
 oscConfig_BOARD_BootClockVLPR                     ./board/clock_config.o
 printf                                            c:/nxp/mcuxpressoide_11.1.0_3209/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.1.0.201909161352/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(lib_a-printf.o)
                                                   ./drivers/fsl_common.o
+pushButton                                        ./source/main.o
 redLed                                            ./source/main.o
 setup()                                           ./source/main.o
 simConfig_BOARD_BootClockRUN                      ./board/clock_config.o
