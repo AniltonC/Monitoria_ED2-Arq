@@ -2808,16 +2808,16 @@ OUTPUT(GPIO Port.axf elf32-littlearm)
  .debug_macro   0x00001887      0x1c4 ./drivers/fsl_uart.o
  .debug_macro   0x00001a4b       0xbb ./CMSIS/system_MKL25Z4.o
 
-.debug_line     0x00000000     0x2f85
+.debug_line     0x00000000     0x2f80
  .debug_line    0x00000000      0x1ff ./startup/startup_mkl25z4.o
- .debug_line    0x000001ff      0x310 ./source/main.o
- .debug_line    0x0000050f      0x3c7 ./source/mkl_GPIO.o
- .debug_line    0x000008d6      0x26f ./source/mkl_GPIOPort.o
- .debug_line    0x00000b45       0xd6 ./source/mtb.o
- .debug_line    0x00000c1b       0x5a ./source/semihost_hardfault.o
- .debug_line    0x00000c75      0xf50 ./drivers/fsl_lpsci.o
- .debug_line    0x00001bc5      0xf3e ./drivers/fsl_uart.o
- .debug_line    0x00002b03      0x482 ./CMSIS/system_MKL25Z4.o
+ .debug_line    0x000001ff      0x30b ./source/main.o
+ .debug_line    0x0000050a      0x3c7 ./source/mkl_GPIO.o
+ .debug_line    0x000008d1      0x26f ./source/mkl_GPIOPort.o
+ .debug_line    0x00000b40       0xd6 ./source/mtb.o
+ .debug_line    0x00000c16       0x5a ./source/semihost_hardfault.o
+ .debug_line    0x00000c70      0xf50 ./drivers/fsl_lpsci.o
+ .debug_line    0x00001bc0      0xf3e ./drivers/fsl_uart.o
+ .debug_line    0x00002afe      0x482 ./CMSIS/system_MKL25Z4.o
 
 .debug_str      0x00000000    0x36f82
  .debug_str     0x00000000     0x3592 ./startup/startup_mkl25z4.o
