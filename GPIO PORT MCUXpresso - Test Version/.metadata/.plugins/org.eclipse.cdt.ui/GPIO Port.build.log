@@ -1,6 +1,24 @@
-04:50:55 **** Incremental Build of configuration Debug for project GPIO Port ****
+17:36:44 **** Incremental Build of configuration Debug for project GPIO Port ****
 make -r -j4 all 
-make: Nothing to be done for 'all'.
+Building file: ../source/main.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -DCPU_MKL25Z128VFM4_cm0plus -DCPU_MKL25Z128VFM4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -DSDK_DEBUGCONSOLE_UART -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/main.d" -MT"source/main.o" -MT"source/main.d" -o "source/main.o" "../source/main.cpp"
+Finished building: ../source/main.cpp
+ 
+Building target: GPIO Port.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -Xlinker -Map="GPIO Port.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T GPIO_Port_Debug.ld -o "GPIO Port.axf"  ./utilities/fsl_debug_console.o  ./startup/startup_mkl25z4.o  ./source/cpp_config.o ./source/main.o ./source/mkl_GPIO.o ./source/mkl_GPIOPort.o ./source/mtb.o ./source/semihost_hardfault.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_flash.o ./drivers/fsl_gpio.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o  ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o  ./CMSIS/system_MKL25Z4.o   
+Memory region         Used Size  Region Size  %age Used
+   PROGRAM_FLASH:        2444 B       128 KB      1.86%
+            SRAM:        2324 B        16 KB     14.18%
+Finished building target: GPIO Port.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GPIO Port.axf"; # arm-none-eabi-objcopy -v -O binary "GPIO Port.axf" "GPIO Port.bin" ; # checksum -p MKL25Z128xxx4 -d "GPIO Port.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2444	      0	   2324	   4768	   12a0	GPIO Port.axf
+ 
 
-04:51:01 Build Finished. 0 errors, 0 warnings. (took 6s.324ms)
+17:36:47 Build Finished. 0 errors, 0 warnings. (took 2s.781ms)
 

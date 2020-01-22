@@ -1,5 +1,5 @@
 /*!
- * @copyright   © 2017 Universidade Federal do Amazonas.
+ * @copyright   © 2017 UFAM - Universidade Federal do Amazonas.
  *
  * @brief       Interface de programação de aplicações em C++ para GPIO.
  *

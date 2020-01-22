@@ -1,5 +1,5 @@
 /*!
- * @copyright   © 2017 Universidade Federal do Amazonas.
+ * @copyright   © 2017 UFAM - Universidade Federal do Amazonas.
  *
  * @brief       Implementação da API em C++ da classe mãe GPIO.
  *
@@ -204,7 +204,6 @@ void mkl_GPIO::bindPeripheral(uint8_t GPIONumber, uint8_t pinNumber) {
   addressPortxPCRn = (volatile uint32_t *)(0x40049000
                        + 0x1000*GPIONumber
                        + 4*pinNumber);
-  port_pcr_isfr = (volatile uint32_t *)(0x400490A0);
 }
 
 /*!
