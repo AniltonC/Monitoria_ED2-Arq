@@ -1,30 +1,15 @@
-17:35:16 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
+13:13:50 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
 make -r -j4 all 
 Building file: ../source/mainTest.cpp
-Building file: ../source/mkl_GPIO.cpp
-Building file: ../source/mkl_GPIOInterrupt.cpp
-Invoking: MCU C++ Compiler
 Invoking: MCU C++ Compiler
 arm-none-eabi-c++ -DCPU_MKL25Z128VLK4_cm0plus -DCPU_MKL25Z128VLK4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/mainTest.d" -MT"source/mainTest.o" -MT"source/mainTest.d" -o "source/mainTest.o" "../source/mainTest.cpp"
-arm-none-eabi-c++ -DCPU_MKL25Z128VLK4_cm0plus -DCPU_MKL25Z128VLK4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/mkl_GPIO.d" -MT"source/mkl_GPIO.o" -MT"source/mkl_GPIO.d" -o "source/mkl_GPIO.o" "../source/mkl_GPIO.cpp"
-Invoking: MCU C++ Compiler
-arm-none-eabi-c++ -DCPU_MKL25Z128VLK4_cm0plus -DCPU_MKL25Z128VLK4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/mkl_GPIOInterrupt.d" -MT"source/mkl_GPIOInterrupt.o" -MT"source/mkl_GPIOInterrupt.d" -o "source/mkl_GPIOInterrupt.o" "../source/mkl_GPIOInterrupt.cpp"
-Building file: ../source/mkl_GPIOPort.cpp
-Invoking: MCU C++ Compiler
-arm-none-eabi-c++ -DCPU_MKL25Z128VLK4_cm0plus -DCPU_MKL25Z128VLK4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/mkl_GPIOPort.d" -MT"source/mkl_GPIOPort.o" -MT"source/mkl_GPIOPort.d" -o "source/mkl_GPIOPort.o" "../source/mkl_GPIOPort.cpp"
 Finished building: ../source/mainTest.cpp
- 
-Finished building: ../source/mkl_GPIO.cpp
-Finished building: ../source/mkl_GPIOInterrupt.cpp
- 
- 
-Finished building: ../source/mkl_GPIOPort.cpp
  
 Building target: GPIO Port Interrupt.axf
 Invoking: MCU C++ Linker
 arm-none-eabi-c++ -nostdlib -Xlinker -Map="GPIO Port Interrupt.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T GPIO_Port_Interrupt_Debug.ld -o "GPIO Port Interrupt.axf"  ./utilities/fsl_debug_console.o  ./startup/startup_mkl25z4.o  ./source/cpp_config.o ./source/mainTest.o ./source/mkl_GPIO.o ./source/mkl_GPIOInterrupt.o ./source/mkl_GPIOPort.o ./source/mtb.o ./source/semihost_hardfault.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_flash.o ./drivers/fsl_gpio.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o  ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o  ./CMSIS/system_MKL25Z4.o   
 Memory region         Used Size  Region Size  %age Used
-   PROGRAM_FLASH:        2736 B       128 KB      2.09%
+   PROGRAM_FLASH:        2740 B       128 KB      2.09%
             SRAM:        2316 B        16 KB     14.14%
 Finished building target: GPIO Port Interrupt.axf
  
@@ -32,29 +17,41 @@ make --no-print-directory post-build
 Performing post-build steps
 arm-none-eabi-size "GPIO Port Interrupt.axf"; # arm-none-eabi-objcopy -v -O binary "GPIO Port Interrupt.axf" "GPIO Port Interrupt.bin" ; # checksum -p MKL25Z128xxx4 -d "GPIO Port Interrupt.bin";
    text	   data	    bss	    dec	    hex	filename
-   2736	      0	   2316	   5052	   13bc	GPIO Port Interrupt.axf
+   2740	      0	   2316	   5056	   13c0	GPIO Port Interrupt.axf
  
-17:36:44 **** Incremental Build of configuration Debug for project GPIO Port ****
+13:13:58 **** Incremental Build of configuration Debug for project GPIO Port ****
 make -r -j4 all 
-Building file: ../source/main.cpp
+make: Nothing to be done for 'all'.
+13:13:59 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+13:14:04 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+13:17:22 **** Incremental Build of configuration Debug for project GPIO Port ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+13:17:22 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
+make -r -j4 all 
+Building file: ../source/mainTest.cpp
 Invoking: MCU C++ Compiler
-arm-none-eabi-c++ -DCPU_MKL25Z128VFM4_cm0plus -DCPU_MKL25Z128VFM4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -DSDK_DEBUGCONSOLE_UART -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/main.d" -MT"source/main.o" -MT"source/main.d" -o "source/main.o" "../source/main.cpp"
-Finished building: ../source/main.cpp
+arm-none-eabi-c++ -DCPU_MKL25Z128VLK4_cm0plus -DCPU_MKL25Z128VLK4 -DSDK_OS_BAREMETAL -DFSL_RTOS_BM -DSDK_DEBUGCONSOLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\board" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\source" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\drivers" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\CMSIS" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\utilities" -I"C:\Users\anilt\Desktop\Git Repositories\Monitoria_ED2-Arq\GPIO PORT MCUXpresso - Test Version\GPIO Port Interrupt\startup" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__NEWLIB__ -fstack-usage -MMD -MP -MF"source/mainTest.d" -MT"source/mainTest.o" -MT"source/mainTest.d" -o "source/mainTest.o" "../source/mainTest.cpp"
+Finished building: ../source/mainTest.cpp
  
-Building target: GPIO Port.axf
+Building target: GPIO Port Interrupt.axf
 Invoking: MCU C++ Linker
-arm-none-eabi-c++ -nostdlib -Xlinker -Map="GPIO Port.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T GPIO_Port_Debug.ld -o "GPIO Port.axf"  ./utilities/fsl_debug_console.o  ./startup/startup_mkl25z4.o  ./source/cpp_config.o ./source/main.o ./source/mkl_GPIO.o ./source/mkl_GPIOPort.o ./source/mtb.o ./source/semihost_hardfault.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_flash.o ./drivers/fsl_gpio.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o  ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o  ./CMSIS/system_MKL25Z4.o   
+arm-none-eabi-c++ -nostdlib -Xlinker -Map="GPIO Port Interrupt.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T GPIO_Port_Interrupt_Debug.ld -o "GPIO Port Interrupt.axf"  ./utilities/fsl_debug_console.o  ./startup/startup_mkl25z4.o  ./source/cpp_config.o ./source/mainTest.o ./source/mkl_GPIO.o ./source/mkl_GPIOInterrupt.o ./source/mkl_GPIOPort.o ./source/mtb.o ./source/semihost_hardfault.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_flash.o ./drivers/fsl_gpio.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o  ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o  ./CMSIS/system_MKL25Z4.o   
 Memory region         Used Size  Region Size  %age Used
-   PROGRAM_FLASH:        2444 B       128 KB      1.86%
-            SRAM:        2324 B        16 KB     14.18%
-Finished building target: GPIO Port.axf
+   PROGRAM_FLASH:        2740 B       128 KB      2.09%
+            SRAM:        2316 B        16 KB     14.14%
+Finished building target: GPIO Port Interrupt.axf
  
 make --no-print-directory post-build
 Performing post-build steps
-arm-none-eabi-size "GPIO Port.axf"; # arm-none-eabi-objcopy -v -O binary "GPIO Port.axf" "GPIO Port.bin" ; # checksum -p MKL25Z128xxx4 -d "GPIO Port.bin";
+arm-none-eabi-size "GPIO Port Interrupt.axf"; # arm-none-eabi-objcopy -v -O binary "GPIO Port Interrupt.axf" "GPIO Port Interrupt.bin" ; # checksum -p MKL25Z128xxx4 -d "GPIO Port Interrupt.bin";
    text	   data	    bss	    dec	    hex	filename
-   2444	      0	   2324	   4768	   12a0	GPIO Port.axf
+   2740	      0	   2316	   5056	   13c0	GPIO Port Interrupt.axf
  
-17:39:15 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
+13:17:26 **** Incremental Build of configuration Debug for project GPIO Port Interrupt ****
 make -r -j4 all 
 make: Nothing to be done for 'all'.

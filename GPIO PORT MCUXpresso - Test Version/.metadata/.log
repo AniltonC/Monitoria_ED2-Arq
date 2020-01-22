@@ -1340,3 +1340,41 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-21 17:39:23.585
 !MESSAGE PEMicro continuous memory service session connected on port 10224->52725 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-22 13:07:50.943
+!MESSAGE PEMicro continuous memory service session connected on port 10224->56576 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-22 13:07:51.058
+!MESSAGE SWO session connected on port 10224->56575 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2020-01-22 13:13:48.861
+!MESSAGE Failed to execute MI command:
+-data-list-register-values x 25
+Error message from debugger back end:
+Invalid thread id: 1
+!STACK 0
+java.lang.Exception: Invalid thread id: 1
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-22 13:14:11.291
+!MESSAGE SWO session connected on port 10224->57782 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-22 13:14:11.303
+!MESSAGE PEMicro continuous memory service session connected on port 10224->57783 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2020-01-22 13:16:56.391
+!MESSAGE Failed to execute MI command:
+-data-list-register-values x 25
+Error message from debugger back end:
+Invalid thread id: 1
+!STACK 0
+java.lang.Exception: Invalid thread id: 1
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-22 13:17:32.993
+!MESSAGE PEMicro continuous memory service session connected on port 10224->58434 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2020-01-22 13:17:33.009
+!MESSAGE SWO session connected on port 10224->58435 @ 127.0.0.1
