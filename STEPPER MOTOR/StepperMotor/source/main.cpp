@@ -1,7 +1,7 @@
 #include "MKL25Z.h"
 #include "StepperMotor.h"
+#include "mkl_SystickPeriodicInterrupt.h"
 
-StepperMotor MotorPassos(gpio_PTA2, gpio_PTD4, gpio_PTA12, gpio_PTA4);
 void delay(uint32_t milliSeconds)
 {
   uint32_t i;
@@ -15,16 +15,30 @@ void delay(uint32_t milliSeconds)
   }
 }
 
+StepperMotor MotorPassos(gpio_PTA2, gpio_PTD4, gpio_PTA12, gpio_PTA4);
+
+/*
+mkl_SystickPeriodicInterrupt systick = mkl_SystickPeriodicInterrupt(10, clock42Mhz);
+
+extern "C"
+{
+  void Systick_Handler(void)
+  {
+    MotorPassos.doStep();
+  }
+}
+*/
+
 int main(void)
 {
-    MotorPassos.setStepMode(halfStep);
-    MotorPassos.turnOnPowerCoil();
-    MotorPassos.setDirectionOfRotation(clock_wise);
-    MotorPassos.enableRotation();
+  MotorPassos.setStepMode(halfStep);
+  MotorPassos.turnOnPowerCoil();
+  MotorPassos.setDirectionOfRotation(clock_wise);
+  MotorPassos.enableRotation();
 
-    while (true)
-    {
-        MotorPassos.doStep();
-        delay(5000);
-    }
+  while (true)
+  {
+    MotorPassos.doStep();
+    delay(1);
+  }
 }
