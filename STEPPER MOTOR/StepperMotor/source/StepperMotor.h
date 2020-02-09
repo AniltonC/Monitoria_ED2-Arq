@@ -1,8 +1,7 @@
-/*
- * StepperMotor.h  - Stepper Motor library for FRDM-KL25Z - Version 1.0
+/*!
+ * @copyright   � 2020 UFAM - Universidade Federal do Amazonas.
  *
- * Author: Anilton Carlos - aniltoncarlos9@gmail.com / aclr@icomp.ufam.edu.br
- * 
+ * @brief Stepper Motor header file for FRDM-KL25Z - Version 1.0
  * The sequence of control signals for 4 control wire is as follows:
  * 
  * Step   C0 C1 C2 C3
@@ -14,32 +13,64 @@
  *    6    0  0  1  1
  *    7    0  0  0  1
  *    8    1  0  0  1
+ *
+ * @file        StepperMotor.h
+ * @version     1.0
+ * @date        5 Fevereiro 2020
+ *
+ * @section     HARDWARES & SOFTWARES
+ *              +board        FRDM-KL25Z da NXP.
+ *              +processor    MKL25Z128VLK4 - ARM Cortex-M0+
+ *              +compiler     MCUXpresso
+ *              +manual       L25P80M48SF0RM, Rev.3, September 2012
+ *              +revisions    Versão (data): Descrição breve.
+ *                             ++ 1.0 (5 Fevereiro 2020): Versão inicial.
+ *
+ * @section     AUTHORS & DEVELOPERS
+ *              +institution  Universidade Federal do Amazonas
+ *              +courses      Engenharia da Computação / Engenharia Elétrica
+ *              +teacher      Miguel Grimm <miguelgrimm@gmail.com>
+ *              +student      Versão inicial:
+ *                             ++ Anilton Carlos <aniltoncarlos9@gmail.com>
+ *
+ * @section     LICENSE
+ *
+ *              GNU General Public License (GNU GPL)
+ *
+ *              Este programa é um software livre; Você pode redistribuí-lo
+ *              e/ou modificá-lo de acordo com os termos do "GNU General Public
+ *              License" como publicado pela Free Software Foundation; Seja a
+ *              versão 3 da licença, ou qualquer versão posterior.
+ *
+ *              Este programa é distribuído na esperança de que seja útil,
+ *              mas SEM QUALQUER GARANTIA; Sem a garantia implícita de
+ *              COMERCIALIZAÇÃO OU USO PARA UM DETERMINADO PROPÓSITO.
+ *              Veja o site da "GNU General Public License" para mais detalhes.
+ *
+ * @htmlonly    http://www.gnu.org/copyleft/gpl.html
  */
 
 #ifndef STEPPERMOTOR_H_
 #define STEPPERMOTOR_H_
 
-#include "MKL25Z.h"
-#include "mkl_GPIOPort.h"
+#include <MKL25Z.h>
+#include <mkl_GPIOPort.h>
 
-typedef enum
-{
+typedef enum {
     halfStep = 0,
     simpleStep = 1,
     doubleStep = 2
 } stepMode;
 
-typedef enum
-{
+typedef enum {
     clock_wise = 0,
     counter_clock_wise = 1
 } stepDirection;
 
 // library interface descripition
-class StepperMotor
-{
-public:
-    // constructor:
+class StepperMotor {
+ public:
+    // Construtor da classe do Motor de Passo, cujas são os gpio_Pin, de 1 a 4:
     StepperMotor(gpio_Pin coilPin_1, gpio_Pin coilPin_2,
                  gpio_Pin coilPin_3, gpio_Pin coilPin_4);
 
@@ -47,26 +78,38 @@ public:
     void enableRotation();
     void disableRotation();
 
-    // Método de configuração da rotação do Motor (SimpleStep, DoubleSteps, HalfStep)
+    /*
+     *Método de configuração da rotação do Motor
+     *(simpleStep, doubleStep, halfStep)
+     */
     void setStepMode(stepMode mode);
 
     // Método de configuração do sentido de rotação
     void setDirectionOfRotation(stepDirection directionOfRotation);
 
-    // Métodos de configuração da energia das bobinas
+    // Método que energiza as bobinas que estiverem acionadas
     void turnOnPowerCoil();
+
+    // Método que desernegiza todas as bobinas
     void turnOffPowerCoil();
 
     // Método para realização dos passos
     void doStep();
 
-private:
+ private:
     void writeCoils(int value);
 
-    bool enableStep;         // Estado de habilitação da Rotação
-    stepMode mode;           // Modo de rotação                 
-    stepDirection direction; // Direção da rotação do motor     
-    bool powerCoil;          // Estado da energia das bobinas   
+    // Estado de habilitação da Rotação
+    bool enableStep;
+
+    // Modo de rotação
+    stepMode mode;
+
+    // Direção da rotação do motor
+    stepDirection direction;
+
+    // Estado da energia das bobinas
+    bool powerCoil;
 
     // GPIO Port das bobinas do motor
     mkl_GPIOPort coil_1;
@@ -82,7 +125,8 @@ private:
      */
     int allSteps[8] = {8, 12, 4, 6, 2, 3, 1, 9};
 
-    int currentStep, nextStep; // Posição do vetor de passos
+    // Posição do vetor de passos
+    int currentStep, nextStep;
 };
 
 #endif /* STEPPERMOTOR_H_ */

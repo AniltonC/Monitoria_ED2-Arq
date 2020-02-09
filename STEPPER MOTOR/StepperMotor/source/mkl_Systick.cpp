@@ -1,7 +1,7 @@
 /*!
- * @copyright   ï¿½ 2019 UFAM - Universidade Federal do Amazonas.
+ * @copyright   © 2019 UFAM - Universidade Federal do Amazonas.
  *
- * @brief       Interface de programaï¿½ï¿½o de aplicaï¿½ï¿½es em C++ para  o System Tick Timer (MKL25Z).
+ * @brief       Interface de programação de aplicações em C++ para  o System Tick Timer (MKL25Z).
  *
  * @file        mkl_Systick.cpp
  * @version     1.0
@@ -11,36 +11,36 @@
  *              +board        FRDM-KL25Z da NXP.
  *              +processor    MKL25Z128VLK4 - ARM Cortex-M0+.
  *              +peripheral   Systick - System Tick Timer.
- *              +compiler     Kinetisï¿½ Design Studio IDE
+ *              +compiler     Kinetis® Design Studio IDE
  *              +manual       L25P80M48SF0RM, Rev.3, September 2012
- *              +revisions    Versï¿½o (data): Descriï¿½ï¿½o breve.
- *                             ++ 1.0 (31 Janeiro 2019): Versï¿½o inicial.
+ *              +revisions    Versão (data): Descrição breve.
+ *                             ++ 1.0 (31 Janeiro 2019): Versão inicial.
  *
  * @section     AUTHORS & DEVELOPERS
  *              +institution  Universidade Federal do Amazonas
- *              +courses      Engenharia da Computaï¿½ï¿½o / Engenharia Elï¿½trica
+ *              +courses      Engenharia da Computação / Engenharia Elétrica
  *              +teacher      Miguel Grimm <miguelgrimm@gmail.com>
- *              +student      Versï¿½o inicial:
+ *              +student      Versão inicial:
  *                             ++ Victoria da Silva Leite <victoria.vl73@gmail.com>
  *
  * @section     LICENSE
  *
  *              GNU General Public License (GNU GPL).
  *
- *              Este programa ï¿½ um software livre; Vocï¿½ pode redistribuï¿½-lo
- *              e/ou modificï¿½-lo de acordo com os termos do "GNU General Public
+ *              Este programa é um software livre; Você pode redistribuí-lo
+ *              e/ou modificá-lo de acordo com os termos do "GNU General Public
  *              License" como publicado pela Free Software Foundation; Seja a
- *              versï¿½o 3 da licenï¿½a, ou qualquer versï¿½o posterior.
+ *              versão 3 da licença, ou qualquer versão posterior.
  *
- *              Este programa ï¿½ distribuï¿½do na esperanï¿½a de que seja ï¿½til,
- *              mas SEM QUALQUER GARANTIA; Sem a garantia implï¿½cita de
- *              COMERCIALIZAï¿½ï¿½O OU USO PARA UM DETERMINADO PROPï¿½SITO.
+ *              Este programa é distribuído na esperança de que seja útil,
+ *              mas SEM QUALQUER GARANTIA; Sem a garantia implícita de
+ *              COMERCIALIZAÇÃO OU USO PARA UM DETERMINADO PROPÓSITO.
  *              Veja o site da "GNU General Public License" para mais detalhes.
  *
  * @htmlonly    http://www.gnu.org/copyleft/gpl.html
  */
 
-#include "mkl_Systick.h"
+#include <mkl_Systick.h>
 
 /*!
  *   @fn			setClockSource
@@ -48,8 +48,8 @@
  * 	 @brief 		configura o clocl a ser usado.
  *
  * 	 Clock pode ser setado em: clock2Mhz ou clock48Mhz.Para valor de clock em 2Mhz(0)
- * 	 o valor do Clock utilizado no algoritmo serï¿½ o valor do Clock do Nï¿½cleo (42Mhz)
- * 	 dividido por 16. Caso contrï¿½rio, o Clock utilizado serï¿½ o mesmo do nï¿½cleo.
+ * 	 o valor do Clock utilizado no algoritmo será o valor do Clock do Núcleo (42Mhz)
+ * 	 dividido por 16. Caso contrário, o Clock utilizado será o mesmo do núcleo.
  *
  *	 @param[in]	clock - clock do sistema ou clock do sistema dividido por 16
  *
@@ -117,7 +117,7 @@ void mkl_Systick::clearCounter() {
 /*!
  *   @fn		enableInterrupt
  *
- * 	 @brief 	Habilita interrupï¿½ï¿½o do systick.
+ * 	 @brief 	Habilita interrupção do systick.
  *
  *	 @remarks	Siglas
  *				- addrSTCSR: SYSTick Control and Status Register.
@@ -129,7 +129,7 @@ void mkl_Systick::enableInterrupt() {
 /*!
  *   @fn		disableInterrupt
  *
- * 	 @brief 	Desabilita a interrupï¿½ï¿½o do systick.
+ * 	 @brief 	Desabilita a interrupção do systick.
  *
  *	 @remarks	Siglas
  *				- addrSTCSR: SYSTick Control and Status Register.
@@ -141,7 +141,7 @@ void mkl_Systick::disableInterrupt() {
 /*!
  *   @fn		setRegister
  *
- * 	 @brief 	Endereï¿½a os registradores do systick.
+ * 	 @brief 	Endereça os registradores do systick.
  *
  *	 @remarks	Siglas
  *				- addrSTCSR: SYSTick Control and Status Register.

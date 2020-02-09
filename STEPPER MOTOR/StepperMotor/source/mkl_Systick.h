@@ -1,7 +1,7 @@
 /*!
- * @copyright   ï¿½ 2019 UFAM - Universidade Federal do Amazonas.
+ * @copyright   © 2019 UFAM - Universidade Federal do Amazonas.
  *
- * @brief       Interface de programaï¿½ï¿½o de aplicaï¿½ï¿½es em C++ para  o System Tick Timer (MKL25Z).
+ * @brief       Interface de programação de aplicações em C++ para  o System Tick Timer (MKL25Z).
  *
  * @file        mkl_Systick.h
  * @version     1.0
@@ -11,30 +11,30 @@
  *              +board        FRDM-KL25Z da NXP.
  *              +processor    MKL25Z128VLK4 - ARM Cortex-M0+.
  *              +peripheral   Systick - System Tick Timer.
- *              +compiler     Kinetisï¿½ Design Studio IDE
+ *              +compiler     Kinetis® Design Studio IDE
  *              +manual       L25P80M48SF0RM, Rev.3, September 2012
- *              +revisions    Versï¿½o (data): Descriï¿½ï¿½o breve.
- *                             ++ 1.0 (31 Janeiro 2019): Versï¿½o inicial.
+ *              +revisions    Versão (data): Descrição breve.
+ *                             ++ 1.0 (31 Janeiro 2019): Versão inicial.
  *
  * @section     AUTHORS & DEVELOPERS
  *              +institution  Universidade Federal do Amazonas
- *              +courses      Engenharia da Computaï¿½ï¿½o / Engenharia Elï¿½trica
+ *              +courses      Engenharia da Computação / Engenharia Elétrica
  *              +teacher      Miguel Grimm <miguelgrimm@gmail.com>
- *              +student      Versï¿½o inicial:
+ *              +student      Versão inicial:
  *                             ++ Victoria da Silva Leite <victoria.vl73@gmail.com>
  *
  * @section     LICENSE
  *
  *              GNU General Public License (GNU GPL).
  *
- *              Este programa ï¿½ um software livre; Vocï¿½ pode redistribuï¿½-lo
- *              e/ou modificï¿½-lo de acordo com os termos do "GNU General Public
+ *              Este programa é um software livre; Você pode redistribuí-lo
+ *              e/ou modificá-lo de acordo com os termos do "GNU General Public
  *              License" como publicado pela Free Software Foundation; Seja a
- *              versï¿½o 3 da licenï¿½a, ou qualquer versï¿½o posterior.
+ *              versão 3 da licença, ou qualquer versão posterior.
  *
- *              Este programa ï¿½ distribuï¿½do na esperanï¿½a de que seja ï¿½til,
- *              mas SEM QUALQUER GARANTIA; Sem a garantia implï¿½cita de
- *              COMERCIALIZAï¿½ï¿½O OU USO PARA UM DETERMINADO PROPï¿½SITO.
+ *              Este programa é distribuído na esperança de que seja útil,
+ *              mas SEM QUALQUER GARANTIA; Sem a garantia implícita de
+ *              COMERCIALIZAÇÃO OU USO PARA UM DETERMINADO PROPÓSITO.
  *              Veja o site da "GNU General Public License" para mais detalhes.
  *
  * @htmlonly    http://www.gnu.org/copyleft/gpl.html
@@ -44,11 +44,11 @@
 #ifndef MKL_SYSTICK_H_
 #define MKL_SYSTICK_H_
 
-#include <MKL25Z.h>
+#include <MKL25Z4.h>
 #include <stdint.h>
 
 /* !
- *	Definiï¿½ï¿½o dos possï¿½veis valores de clock
+ *	Definição dos possíveis valores de clock
  */
 typedef enum {
     clock2Mhz = 0 ,  //!< System clock system divided by 16
@@ -59,13 +59,13 @@ typedef enum {
 /*!
  *  @class    mkl_Systick
  *
- *  @brief    A classe mkl_Systick representa o perifï¿½rico System Tick Timer da MKL25Z.
+ *  @brief    A classe mkl_Systick representa o periférico System Tick Timer da MKL25Z.
  *
- *  @details  Esta classe ï¿½ usada para a geraï¿½ï¿½o temporizaï¿½ï¿½es.
+ *  @details  Esta classe é usada para a geração temporizações.
  *
  *  @section  EXAMPLES USAGE
  *
- *   Uso dos mï¿½todos para o uso do Systick
+ *   Uso dos métodos para o uso do Systick
  *     +fn setClockSource(systick_clockSource clock);
  *     +fn setReload(uint32_t reloadValue);
  *     +fn enableCounter();
@@ -78,7 +78,7 @@ typedef enum {
 class mkl_Systick {
  public:
 	/*!
-	 * Mï¿½todos de configuraï¿½ï¿½o do systick
+	 * Métodos de configuração do systick
 	 */
     void setClockSource(systick_clockSource clock);
     void setReload(uint32_t reloadValue);
@@ -86,34 +86,34 @@ class mkl_Systick {
     void disableCounter();
     void clearCounter();
 	/*!
-	 * Mï¿½todos que configuram a interrupï¿½ï¿½o
+	 * Métodos que configuram a interrupção
 	 */
     void enableInterrupt();
     void disableInterrupt();
 
  private:
 	/*!
-     * Mï¿½todo interno para endereï¿½ar os registradores
+     * Método interno para endereçar os registradores
 	 */
     void setRegister();
 
 	/*!
-	 *  Endereï¿½o no mapa de memï¿½ria do Control and Status Register
+	 *  Endereço no mapa de memória do Control and Status Register
 	 */
     volatile unsigned int *addrSTCSR;
 
 	/*!
-	 *  Endereï¿½o no mapa de memï¿½ria do Reload Value Register
+	 *  Endereço no mapa de memória do Reload Value Register
 	 */
     volatile unsigned int *addrSTRVR;
 
 	/*!
-	 *  Endereï¿½o no mapa de memï¿½ria do Current Value Register
+	 *  Endereço no mapa de memória do Current Value Register
      */
     volatile unsigned int *addrSTCVR;
 
 	/*!
-	 *  Endereï¿½o no mapa de memï¿½ria do Calibration Value Register
+	 *  Endereço no mapa de memória do Calibration Value Register
 	 */
     volatile unsigned int *addrSTCALIB;
 };
